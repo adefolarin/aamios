@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title_inner d-flex">
+                Upcoming Events
+            </div>
+        </ion-title>
+    </ion-toolbar>
+
+    <ion-segment [(ngModel)]="events_tab" lines="none" mode="md" style="display: none;">
+        <ion-segment-button value="upcoming" mode="md">
+            <ion-label>{{'upcoming' | translate}}</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="past" mode="md">
+            <ion-label>{{'past' | translate}}</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content class="bg_img" fullscreen>
+    <div class="tab_content" [ngSwitch]="events_tab">
+        <ion-list lines="none" *ngSwitchCase="'upcoming'">
+            <ion-item *ngFor="let data of calendardata">
+                <div class="item_inner">
+                    <div class="text_box">
+                        <h3>{{data.calendarname}}</h3>                    
+                    </div>
+                    <div>   
+                       <img src="{{data.calendarpics}}">                 
+                    </div>
+                    <div class="events_date">
+                        <h4>Date: <span>{{data.calendardate}}</span></h4>
+                        <h4>Time: {{data.calendartime}}</h4>
+                    </div>
+                    
+                </div>
+            </ion-item>
+            
+        </ion-list>
+    </div>
+</ion-content>

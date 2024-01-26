@@ -1,0 +1,22 @@
+{
+  "appId": "com.aam.kccconline",
+  "appName": "Ade Ajala Ministries",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 10000,
+      "launchAutoHide": true,
+      "androidSplashResourceName": "splash",
+      "androidSpinnerStyle": "inverse",
+      "iosSpinnerStyle": "small",
+      "spinnerColor": "#999999",
+      "showSpinner": false
+    }
+  },
+  "cordova": {},
+  "ios": {
+    "cordovaLinkerFlags": ["-ObjC"]     
+  }
+}

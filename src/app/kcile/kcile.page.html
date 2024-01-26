@@ -1,0 +1,154 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-back-button (click)="goHome();"></ion-back-button>
+          
+      </ion-buttons>
+      <ion-title>KCILE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="kcileimg">
+
+  <div class="logo ion-text-center">
+    <img src="assets/imgs/kcilelogo.png">
+  </div>
+  <h2 class="ion-text-center ion-text-uppercase">Kingdom Connection Institute <br>For Life Empowerment</h2>
+
+
+  <div class="text-box">
+    <h4 style="text-align:center;">Schedules:</h4>
+
+  <ion-card class="card" style="margin-top:-5px;">
+    <ion-row>     
+      <ion-col size="12">
+        <br>
+        <p style="text-align: center;">
+          <span> IN CLASS LECTURES</span>
+         </p>
+      </ion-col>
+        <ion-col size="6" style="margin-top:-20px;">
+           <p style="text-align: center;">
+            <ion-icon name="calendar"></ion-icon>
+            <span> &nbsp;TUESDAYS</span>
+           </p>
+        </ion-col>
+        <ion-col size="6" style="margin-top:-20px;">
+          <p style="text-align: center;">
+            <ion-icon name="time"></ion-icon>
+            <span> &nbsp;6pm</span>
+          </p>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+
+      <ion-col size="12">
+        <p style="text-align: center;">
+          <span>ONLINE CLASSES - ZOOM</span>
+         </p>
+      </ion-col>
+        
+      <ion-col size="6" style="margin-top:-20px;">
+         <p style="text-align: center;">
+          <ion-icon name="calendar"></ion-icon>
+          <span> &nbsp;SATURDAYS</span>
+         </p>
+      </ion-col>
+      <ion-col size="6" style="margin-top:-20px;">
+        <p style="text-align: center;">
+          <ion-icon name="time"></ion-icon>
+          <span> &nbsp;5pm</span>
+        </p>
+      </ion-col>
+  </ion-row>
+</ion-card>
+
+<br>
+
+    <h4 style="text-align:center;" id="h4card">MODULE ONE - Available Courses:</h4>
+    <ion-card class="card" style="margin-top:-5px;"> 
+      
+        <ion-item>
+          <ion-label><p id="course"><ion-icon name="ellipse"></ion-icon>
+            &nbsp;Now that you are a Christian
+            </p></ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><p id="course"><ion-icon name="ellipse"></ion-icon>
+            &nbsp;How to study the Bible</p></ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><p id="course"><ion-icon name="ellipse"></ion-icon>
+            &nbsp;Prayer - How to finish the bible</p></ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><p id="course"><ion-icon name="ellipse"></ion-icon>
+            &nbsp;Leadership & Fellower-ship</p></ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><p id="course"><ion-icon name="ellipse"></ion-icon>
+            &nbsp;Evangelism</p></ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><p id="course"><ion-icon name="ellipse"></ion-icon>
+            &nbsp;Giving</p></ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><p id="course"><ion-icon name="ellipse"></ion-icon>
+            &nbsp;Baptism</p></ion-label>
+        </ion-item>
+         
+    
+    <h4 style="text-align:center;display:none;" id="h4card"><strong>Fees:</strong> $25 per module</h4>
+    <br>
+    </ion-card>
+
+    <ion-button expand="full" slot="fixed" (click)="kcileregmodule()" id="btncourse"> 
+      REGISTER FOR THE ABOVE COURSES
+    </ion-button>
+    <br><br>
+
+    <h4 style="text-align:center;" id="h4card">Future Courses:</h4>
+
+    <ion-card style="margin-top:-5px;"> 
+      <ion-item>
+        <ion-label id="course"><ion-icon name="ellipse"></ion-icon>&nbsp;&nbsp;Systematic Theology</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label id="course"><ion-icon name="ellipse"></ion-icon>&nbsp;&nbsp;Church Doctrine</ion-label>
+      </ion-item>
+        <ion-item>
+          <ion-label id="course"><ion-icon name="ellipse"></ion-icon>&nbsp;&nbsp;Counselling</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label id="course"><ion-icon name="ellipse"></ion-icon>&nbsp;&nbsp;Ministry(Practical)</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label id="course"><ion-icon name="ellipse"></ion-icon>&nbsp;&nbsp;Brokeness</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label id="course"><ion-icon name="ellipse"></ion-icon>&nbsp;&nbsp;Leading in Ministry</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label id="course"><ion-icon name="ellipse"></ion-icon>&nbsp;&nbsp;Leading in Business</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label id="course"><ion-icon name="ellipse"></ion-icon>&nbsp;&nbsp;Vision & Readiness</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label id="course"><ion-icon name="ellipse"></ion-icon>&nbsp;&nbsp;Growing Your Gift</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label id="course"><ion-icon name="ellipse"></ion-icon>&nbsp;&nbsp;Relationship & Marriage</ion-label>
+        </ion-item>
+    </ion-card>
+ 
+    <ion-button expand="full" slot="fixed" (click)="kcilereg()" id="btncourse"> 
+      REQUEST FOR INFORMATION
+    </ion-button>
+    
+   </div>
+
+</ion-content>

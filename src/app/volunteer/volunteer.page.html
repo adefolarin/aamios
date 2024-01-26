@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-back-button></ion-back-button>
+          
+      </ion-buttons>
+      <ion-title>Volunteer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="bg_img">
+
+  <h1 class="ion-text-center" style="font-size:15px;color:floralwhite;margin-top:20px;">
+    Sign Up<span> To Volunteer</span></h1>
+
+  <div class="form">
+      <ion-list lines="none">
+        <ion-item lines="none" style="display:block;">
+          <div class="item_inner d-flex">
+              <ion-icon class="zmdi zmdi-account ion-text-start"></ion-icon>
+              <ion-input mode="md" type="text" [(ngModel)]="catname" value="{{catname}}" readonly>
+              </ion-input>
+          </div>
+         </ion-item>
+          <ion-item lines="none">
+              <div class="item_inner d-flex">
+                  <ion-icon class="zmdi zmdi-account ion-text-start"></ion-icon>
+                  <ion-input mode="md" type="name" placeholder="Full Name" [(ngModel)]="name">
+                  </ion-input>
+              </div>
+          </ion-item>
+          <ion-item lines="none">
+              <div class="item_inner d-flex">
+                  <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                  <ion-input mode="md" type="text" placeholder="Phone Number" 
+                  [(ngModel)]="pnum">
+                  </ion-input>
+              </div>
+          </ion-item>
+          <ion-item lines="none">
+              <div class="item_inner d-flex">
+                  <ion-icon class="zmdi zmdi-email ion-text-start"></ion-icon>
+                  <ion-input mode="md" type="email" placeholder="Email" 
+                  [(ngModel)]="email"></ion-input>
+              </div>
+          </ion-item>
+
+          
+          <div class="">
+            <ion-list-header>
+              <ion-label><p id="label">Time you will be available(tick all that apply)</p></ion-label>
+            </ion-list-header>
+        
+            <ion-item *ngFor="let module of modules">
+              <ion-label><p id="label">{{module.voldate}}</p> | <p id="label">{{module.voltime}}</p>
+              </ion-label>
+              <ion-checkbox slot="start" [(ngModel)]="module.checked" (ionChange)="isChecked(item,$event)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item lines="none" style="display: none;">
+              <div class="item_inner d-flex">
+                  <ion-icon class="zmdi ion-text-start"></ion-icon>
+                  <ion-input mode="md" type="text" placeholder="Value" 
+                  value="{{val}}" [(ngModel)]="val"></ion-input>
+                
+              </div>
+           </ion-item>
+        
+          </div>
+         
+      </ion-list>
+      <ion-button size="large" expand="full" class="btn" (click)="volunteer()" [disabled]="disabledButton" 
+      color="tertiary">Send</ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      OnDemand Play Lists
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content> 
+  <ion-list class="ion-padding">
+    <ion-item ion-item *ngFor="let list of (myplaylist | async)?.items" (click)="openPlaylistItems(list.id)">
+      <ion-thumbnail slot="start">
+      <img [src]="list.snippet.thumbnails.high.url">
+
+    </ion-thumbnail>
+    <div id="list">
+    <h4>{{ list.snippet.title }}</h4>
+    <p>{{ list.snippet.publishedAt | date:'short' }}</p>
+    </div>
+    </ion-item>
+  </ion-list>
+
+  <iframe width="360" height="215" 
+  src="https://www.youtube.com/embed/videoseries?list=PLRiOTYOXvFzaARHOdX5Q7aw70NLaIMPem" frameborder="0" 
+  allow="accelerometer; 
+  autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</ion-content>

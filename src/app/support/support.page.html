@@ -1,0 +1,153 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-back-button></ion-back-button>
+          
+      </ion-buttons>
+      <ion-title>Volunteer / Support</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="bg_img">
+
+  <h1 class="ion-text-center" style="font-size:15px;color:floralwhite;margin-top:20px;">
+    {{caption}}</h1>
+
+  <div class="form">
+      <ion-list lines="none">
+        <ion-item lines="none" style="display:none;">
+          <div class="item_inner d-flex">
+              <ion-icon class="zmdi zmdi-account ion-text-start"></ion-icon>
+              <ion-input mode="md" type="text" [(ngModel)]="catname" value="{{catname}}" readonly>
+              </ion-input>
+          </div>
+         </ion-item>
+          <ion-item lines="none">
+              <div class="item_inner d-flex">
+                  <ion-icon class="zmdi zmdi-account ion-text-start"></ion-icon>
+                  <ion-input mode="md" type="name" placeholder="Full Name" [(ngModel)]="name">
+                  </ion-input>
+              </div>
+          </ion-item>
+          <ion-item lines="none">
+              <div class="item_inner d-flex">
+                  <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                  <ion-input mode="md" type="text" placeholder="Phone Number" 
+                  [(ngModel)]="pnum">
+                  </ion-input>
+              </div>
+          </ion-item>
+          <ion-item lines="none">
+              <div class="item_inner d-flex">
+                  <ion-icon class="zmdi zmdi-email ion-text-start"></ion-icon>
+                  <ion-input mode="md" type="email" placeholder="Email" 
+                  [(ngModel)]="email"></ion-input>
+              </div>
+          </ion-item>
+
+          
+          <div class="">
+            <ion-list-header>
+              <ion-label><p id="label">{{caption1}}</p></ion-label>
+            </ion-list-header>
+        
+            <ion-item *ngFor="let module of modules">
+              <ion-label><p id="label">{{module.voldate}} {{module.voltime}}</p>
+              </ion-label>
+              <!--<ion-checkbox slot="start" [(ngModel)]="module.checked" (ionChange)="isChecked(item,$event)"></ion-checkbox>-->
+            </ion-item>
+
+            <ion-item lines="none" style="display: none;">
+              <div class="item_inner d-flex">
+                  <ion-icon class="zmdi ion-text-start"></ion-icon>
+                  <ion-input mode="md" type="text" placeholder="Value" 
+                  value="{{val}}" [(ngModel)]="val"></ion-input>
+                
+              </div>
+           </ion-item>
+        
+          </div>
+
+          <div class="">
+            <ion-list-header>
+              <ion-label><p id="label">{{caption2}}</p></ion-label>
+            </ion-list-header>
+          </div>
+        
+          <ion-item style="display:none;">
+            <div *ngFor="let data of programdata2" style="display: inline;">
+              <p id="labelprice" style="display: inline;">${{data.price}}&nbsp;&nbsp;</p>     
+            </div>
+            <div style="display: inline;">
+              <p id="labelprice" style="display: inline;">Others $</p>     
+            </div>     
+          </ion-item>
+
+    
+        <ion-radio-group [(ngModel)]="myprice" (ionChange)="showPriceInput()">
+          <ion-row>
+            <ion-col *ngFor="let data of programdata2">
+              <ion-item>
+                <ion-label><p id="label">${{data.price}}</p>
+                </ion-label>
+                <ion-radio slot="start" [value]="data.price"></ion-radio>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item *ngIf="price != null">
+                <ion-label><p id="label">Others $</p></ion-label>
+                <ion-radio slot="start" value="others"></ion-radio>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        
+        </ion-radio-group>
+     
+
+         <div id="priceinput">
+            <ion-list-header>
+              <ion-label><p id="label">{{caption3}}</p></ion-label>
+            </ion-list-header>
+        
+            <ion-item lines="none">
+              <div class="item_inner d-flex">
+                  <ion-icon class="zmdi zmdi-money ion-text-start"></ion-icon>
+                  <ion-input mode="md" type="text" placeholder="Amount" 
+                  [(ngModel)]="amount"></ion-input>
+              </div>
+            </ion-item>    
+          </div>
+
+          <div class="">
+            <ion-list-header>
+              <ion-label><p id="label">{{caption4}}</ion-label>
+            </ion-list-header>
+        
+            <ion-item lines="none">
+              <div class="item_inner d-flex">
+                  <ion-icon class="zmdi zmdi-calendar ion-text-start"></ion-icon>
+                  <ion-input mode="md" type="text" placeholder="Date To Redeem" 
+                  [(ngModel)]="redeemdate"></ion-input>
+              </div>
+            </ion-item>    
+          </div>
+
+          <div class="">
+            <ion-list-header>
+              <ion-label><p id="label">{{caption5}}</p></ion-label>
+            </ion-list-header>
+        
+            <div id="otherpayment">
+              <div>
+                <p [innerHTML]="caption6"></p>
+              </div>
+            </div>   
+          </div>
+         
+      </ion-list>
+      <br>
+      <ion-button size="large" expand="full" class="btn" (click)="volunteer()" [disabled]="disabledButton" 
+      color="tertiary">Send</ion-button>
+  </div>
+</ion-content>

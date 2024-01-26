@@ -1,0 +1,604 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary: #21bded;
+    --bg-color: #F9F6FA;
+    --text-light: #878787;
+    --text-dark: #292929;
+    --text-black: #000;
+    --white: #fff;
+    --transparent: rgba(0, 0, 0, 0);
+    --item_bg: rgba(255, 248, 248, 0.16);
+    --item_bg2: rgba(48,83,163,0.4);
+    --item_bg3: rgba(48,83,163,0.2);
+    --item_bg4: rgba(48,83,163,0.4);
+}
+
+.bg_color {
+    --background: var(--bg-color);
+}
+
+.bg_img {
+    --color: #fff;
+    --background: none;
+    background: url(assets/imgs/mybg.png) 0 0/100% 100% no-repeat;
+}
+
+.kcileimg {
+    --color: #fff;
+    --background: none;
+    background: url(assets/imgs/kcileimg.png) 0 0/100% 100% no-repeat;
+}
+
+.d-flex {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+
+    .end {
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        display: block;
+    }
+}
+
+.center_img {
+    position: relative;
+    overflow: hidden;
+
+    img {
+        &.crop_img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            bottom: 0;
+            left: -50% !important;
+            right: -50% !important;
+            margin: auto;
+        }
+
+    }
+}
+
+.button {
+    &.btn {
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 1px !important;
+        height: 52px;
+        --background: var(--primary);
+        color: var(--white);
+        margin: 0;
+        --box-shadow: none;
+        text-transform: none !important;
+
+        ion-icon {
+            font-size: 1.4rem;
+        }
+
+        &:hover:not(.disable-hover) {
+            --background: var(--primary);
+        }
+
+        &.button-outline {
+            --background: var(--transparent);
+            color: var(--white);
+            --border-color: var(--primary);
+            --border-width: 1px;
+
+            &:hover:not(.disable-hover) {
+                --background: var(--transparent);
+            }
+        }
+
+        &.button-round {
+            --border-radius: 50px !important;
+        }
+
+        &.button-block {
+            --border-radius: 6px !important;
+        }
+
+    }
+}
+
+ion-header {
+    z-index: 999;
+
+    &::after {
+        display: none !important;
+    }
+
+    ion-toolbar {
+        --background: var(--transparent);
+        display: flex;
+        align-items: center;
+        min-height: 60px !important;
+        height: auto;
+        overflow: visible !important;
+        --border-width: 0 !important;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.47);
+            backdrop-filter: blur(4px);
+        }
+
+        ion-buttons {
+            position: relative !important;
+            margin: 0;
+            --padding-end: 0 !important;
+            --padding-start: 0 !important;
+
+            ion-back-button {
+                --color: var(--white) !important;
+                --icon-font-size: 1.3rem !important;
+                //                --padding-start: 0 !important;
+            }
+
+            ion-menu-button {
+                --color: var(--white) !important;
+                --padding-end: 0 !important;
+                font-size: 1.5rem !important;
+                margin-right: 12px;
+
+                &.ios {
+                    font-size: 1.5rem !important;
+                }
+
+            }
+
+            ion-back-button {
+                .button-native {
+                    padding: 0 !important;
+                }
+            }
+
+            &.ios {
+                padding: 0 10px !important;
+            }
+
+        }
+
+        ion-title {
+            color: var(--white);
+            padding: 0 15px !important;
+            padding-left: 0 !important;
+            text-align: justify !important;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: none;
+            display: block;
+            position: relative !important;
+            left: 0;
+            overflow: visible !important;
+            line-height: 60px;
+        }
+
+    }
+
+    &.bg_transparent {
+        ion-toolbar {
+            --background: transparent;
+            --ion-color-base: transparent !important;
+        }
+    }
+}
+
+
+.form {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    width: calc(100% - 74px);
+    z-index: 99;
+
+    ion-list {
+        background: var(--transparent) !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    ion-item {
+        padding: 4px 16px;
+        width: calc(100% - 0px);
+        min-height: unset !important;
+        margin: 0 auto;
+        --background: var(--transparent);
+        background: var(--item_bg);
+        align-items: flex-start;
+        --inner-padding-end: 0px;
+        --inner-min-height: unset !important;
+        --min-height: unset !important;
+        --padding-start: 0;
+        box-shadow: 0 7px 6px -7px rgba(0, 0, 0, 0.5) !important;
+        margin-bottom: 13px;
+        --ripple-color: var(--transparent) !important;
+        --background-focused: var(--transparent) !important;
+
+        ion-icon {
+            color: var(--white);
+            margin: 0;
+            font-size: 0.98rem;
+            min-width: 37px;
+            height: 16px;
+            line-height: normal;
+
+        }
+
+        .icon_box {
+            min-width: 35px;
+
+            img {
+                width: 18px;
+            }
+        }
+
+        ion-label {
+            color: var(--text-dark) !important;
+            font-size: 0.75rem !important;
+            font-weight: 400;
+            margin-bottom: 6px !important;
+            transform: unset !important;
+            text-transform: uppercase;
+            letter-spacing: 0.5px !important;
+        }
+
+
+        ion-textarea,
+        ion-input {
+            --padding: 0 !important;
+            font-size: .75rem !important;
+            font-weight: 500 !important;
+            letter-spacing: 0;
+            --padding-start: 0 !important;
+            --padding-end: 0 !important;
+            --padding-top: 19px !important;
+            --padding-bottom: 19px !important;
+            color: var(--white);
+            --placeholder-color: var(--white) !important;
+            --placeholder-opacity: .5;
+            --placeholder-font-weight: 500 !important;
+            flex: unset !important;
+
+            input {
+                --padding: var(--no-padding);
+
+                &.native-input {
+                    --padding: var(--no-padding);
+                }
+            }
+        }
+
+        &.item-select {
+            ion-select {
+                padding: 0;
+                font-size: 1rem !important;
+                font-weight: 400 !important;
+                letter-spacing: 0;
+                color: var(--text-black);
+                --placeholder-color: var(--text-light);
+                --placeholder-opacity: 1;
+
+            }
+        }
+
+        h5 {
+            margin: 0;
+            color: var(--primary);
+            font-size: .85rem;
+            height: 45px;
+            line-height: 55px;
+            letter-spacing: .4px;
+        }
+    }
+
+    ion-row {
+        margin: 0 -5px;
+    }
+}
+
+
+ion-modal {
+    --background: rgba(0, 0, 0, 0) !important;
+}
+
+.alert-wrapper {
+    border-radius: 13px !important;
+    min-width: calc(100% - 58px) !important;
+    max-height: 484px !important;
+    height: auto;
+
+    .alert-head {
+        background: var(--bg-color);
+        padding: 20px 27px 16px 27px;
+
+        h2 {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+        }
+    }
+
+    .alert-radio-group {
+        max-height: 291px !important;
+
+        .alert-radio-button {
+            .alert-button-inner {
+                .alert-radio-label {
+                    font-size: 1.2rem;
+                    color: var(--text-black);
+                }
+            }
+        }
+    }
+
+    .alert-button-group {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 1.5px;
+            height: 100%;
+            background-color: var(--white);
+            z-index: 9999;
+            margin: 0 auto;
+        }
+
+        .alert-button {
+            color: var(--white);
+            background: var(--primary);
+            height: 50px;
+            text-align: center;
+            margin: 0;
+            width: 50%;
+
+            .alert-button-inner {
+                width: 100%;
+                display: block;
+                height: fit-content;
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 0.7px;
+            }
+        }
+    }
+}
+
+
+ion-segment {
+    ion-segment-button {
+        --indicator-box-shadow: none !important;
+        --indicator-color: var(--transparent) !important;
+        --indicator-height: 0px !important;
+    }
+}
+
+app-home {
+    .swiper-pagination {
+        bottom: 20px !important;
+        text-align: right;
+        padding: 0 20px;
+
+        .swiper-pagination-bullet {
+            background: #bebebe !important;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin: 0 3px !important;
+            opacity: .5 !important;
+
+            &.swiper-pagination-bullet-active {
+                opacity: 1 !important;
+                background: var(--secondary) !important;
+            }
+        }
+    }
+}
+
+app-find-church,
+app-prayers,
+app-events,
+app-prayer-time,
+app-feedback,
+app-movies,
+app-chats,
+app-books,
+app-bible {
+    &.can-go-back {
+        ion-header {
+            ion-toolbar {
+                ion-buttons {
+                    ion-menu-button {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+app-find-church {
+    ion-searchbar {
+        .searchbar-input-container {
+            input {
+                box-shadow: none !important;
+                padding: 0 !important;
+                font-size: 0.75rem !important;
+                font-weight: 400 !important;
+                position: relative !important;
+                text-transform: none !important;
+                text-align: justify !important;
+
+            }
+        }
+    }
+
+
+}
+
+app-church-info {
+    .swiper-pagination {
+        bottom: 8px !important;
+        text-align: center;
+        padding: 0 15px;
+
+        .swiper-pagination-bullet {
+            opacity: 1 !important;
+            background: var(--item_bg) !important;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            margin: 0 2px !important;
+
+            &.swiper-pagination-bullet-active {
+                background: var(--primary) !important; 
+            }
+        }
+    }
+}
+
+ion-app[dir="rtl"] {
+
+    .d-flex .end {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+
+    ion-header ion-toolbar {
+        ion-buttons ion-back-button {
+            transform: rotate(180deg) !important;
+        }
+
+        ion-title {
+            padding-left: 15px !important;
+            padding-right: 0 !important;
+        }
+
+        ion-buttons ion-menu-button {
+            margin-right: 0;
+            margin-left: 12px;
+        }
+    }
+
+    app-bible {
+        ion-list ion-item .item_inner h2 {
+            margin-right: 0 !important;
+            margin-left: 25px !important;
+        }
+    }
+
+    app-chats {
+        ion-list ion-item .item_inner .img_box {
+            margin-right: 0 !important;
+            margin-left: 25px !important;
+        }
+    }
+
+
+    app-chat-screen {
+        ion-header ion-toolbar ion-title .title_inner .profile_img {
+            margin-right: 0px !important;
+            margin-left: 15px !important;
+        }
+
+        .chat_container .chat_box {
+            &.received .chat {
+                padding: 12px 18px 12px 10px !important;
+
+                p {
+                    text-align: left !important;
+                }
+            }
+
+            &.send {
+                .chat {
+                    padding: 12px 10px 12px 18px;
+                    margin-left: 0 !important;
+                    margin-right: auto !important;
+
+                    h2 {
+                        text-align: left !important;
+                    }
+
+                    p {
+                        text-align: right !important;
+                    }
+                }
+            }
+        }
+    }
+
+    app-movies {
+        ion-list ion-item .item_inner .video_details .button.btn {
+            right: unset !important;
+            left: 24px !important;
+        }
+    }
+
+    app-events {
+        ion-list ion-item .item_inner .events_date {
+            margin-right: 0 !important;
+            margin-left: 20px !important;
+        }
+    }
+
+    ion-menu ion-header .profile_box .img_box {
+        margin-right: 0 !important;
+        margin-left: 22px !important;
+    }
+
+    app-find-church {
+        .church_location .church_details .img_box {
+            border-radius: 0px 7px 7px 0px !important;
+        }
+    }
+    app-select-language{
+        ion-list ion-item ion-radio{
+            margin-right: 0!important;
+            margin-left: 24px!important;
+        }
+    }
+}

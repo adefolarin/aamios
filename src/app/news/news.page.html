@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+          <div class="title_inner d-flex">
+              News
+          </div>
+      </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="bg_img" fullscreen>
+  <div class="tab_content" [ngSwitch]="events_tab">
+      <ion-list lines="none" *ngSwitchCase="'upcoming'">
+          <ion-item *ngFor="let data of newsdata" (click)="newsInfo(data.blogid)">
+              <div class="item_inner">
+                <div class="events_date">
+                   <h4><span>{{data.blogtitle}}</span></h4>
+                   <h4>{{data.blogdate}}</h4>
+                </div>
+                <div class="events_date">
+                  <h4>Read More...</h4>                    
+                </div>
+                <div class="text_box">
+                  <h4></h4>                    
+                </div>
+                
+                <div> 
+                  <ion-img src="{{data.blogpics}}"></ion-img>              
+                </div>                 
+              </div>
+          </ion-item>
+          
+      </ion-list>
+  </div>
+</ion-content>

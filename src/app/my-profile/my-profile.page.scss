@@ -1,0 +1,124 @@
+//ion-header ion-toolbar {
+//    --background: var(--item_bg);
+//
+//    &::before {
+//        display: none;
+//    }
+//}
+
+ion-header ion-toolbar ion-title {
+    .title_inner {
+        ion-icon {
+            color: var(--white);
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.scholar {
+    background: var(--item_bg);
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 12px;
+
+    .scholar_img {
+        width: 190px;
+        height: 190px;
+        border-radius: 50%;
+        margin: 0 auto;
+        margin-bottom: 25px;
+        box-shadow: 0px 11px 16px 0px rgba(0, 0, 0, 0.53);
+    }
+
+    p {
+        margin: 0;
+        color: var(--white);
+        font-size: .8rem;
+        font-weight: 400;
+        opacity: .5;
+    }
+}
+
+.form {
+    ion-list {
+        ion-item {
+            .input_field {
+                padding-top: 10px;
+
+                ion-label {
+                    color: var(--white);
+                    color: var(--white) !important;
+                    text-transform: unset;
+                    opacity: .5;
+                    margin-bottom: 0 !important;
+                }
+
+                ion-input {
+                    --padding-top: 0px !important;
+                    --padding-bottom: 10px !important;
+                    font-size: 0.8rem !important;
+                    
+                }
+            }
+        }
+    }
+}
+
+ion-footer{
+    z-index: 99;
+    .button.btn{
+        text-transform: none !important;
+    }
+}
+
+
+ion-segment {
+    border: none !important;
+    background: none !important;
+
+    ion-segment-button {
+        background: none !important;
+        position: relative;
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: var(--white) !important;
+        text-transform: unset !important;
+        letter-spacing: 0;
+        --background-checked: var(--transparent) !important;
+        --background-focused: var(--transparent) !important;
+        --border-width: 0 !important;
+        --border-radius: 0 !important;
+        --indicator-color: var(--transparent) !important;
+        --indicator-box-shadow: none !important;
+        --ripple-color: var(--transparent) !important;
+        --color-hover: var(--white);
+        --background-hover: var(--transparent) !important;
+        --color-checked: var(--white);
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 0;
+            height: 5px;
+            display: block;
+            background: var(--primary) !important;
+            transition: all .3s;
+        }
+
+        &.segment-button-checked {
+            color: var(--white) !important;
+            opacity: 1;
+
+
+            &::after {
+                width: 60px
+            }
+        }
+
+    }
+}

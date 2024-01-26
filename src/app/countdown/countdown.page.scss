@@ -1,0 +1,106 @@
+.menu-item-container {
+    position: relative;
+    z-index: 2;
+    top:50px;
+
+    ion-row {
+            padding-left: 6px;
+            padding-right: 6px;
+            padding-top: 0px;
+            padding-bottom: 5px;
+
+        ion-col {
+            padding-left: 6px;
+            padding-right: 6px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+
+            .menu-item {
+                text-align: center;
+                background: var(--item_bg2);
+                padding-left: 6px;
+                padding-right: 6px;
+                padding-top: 18px;
+                padding-bottom: 18px;
+                border-radius: 5px;
+
+                img {
+                    width: 32px;
+                }
+
+                #lvimg {
+                   width: 80px;
+                }
+
+                p {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    margin: 0;
+                    overflow: hidden;
+                    color: var(--white);
+                    margin-top: 11px;
+                    margin-bottom: 11px;
+                }
+
+                span {
+                  visibility: hidden;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 320px) {
+    .menu-item-container {
+        position: relative;
+        z-index: 2;
+        top:50px;
+    
+        ion-row {
+                padding-left: 6px;
+                padding-right: 6px;
+                padding-top: 0px;
+                padding-bottom: 5px;
+    
+            ion-col {
+                padding-left: 6px;
+                padding-right: 6px;
+                padding-top: 6px;
+                padding-bottom: 6px;
+    
+                .menu-item {
+                    text-align: center;
+                    background: var(--item_bg2);
+                    padding-left: 7px;
+                    padding-right: 7px;
+                    padding-top: 18px;
+                    padding-bottom: 18px;
+                    border-radius: 5px;
+    
+                    img {
+                        width: 32px;
+                    }
+
+                    #lvimg {
+                        width: 80px;
+                     }
+    
+                    p {
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        margin: 0;
+                        overflow: hidden;
+                        color: var(--white);
+                        margin-top: 11px;
+                    }
+    
+                    span {
+                      visibility: hidden;
+                    }
+                }
+            }
+        }
+    }
+  }

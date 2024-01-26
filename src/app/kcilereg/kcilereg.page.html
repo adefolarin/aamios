@@ -1,0 +1,143 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-back-button></ion-back-button>
+          
+      </ion-buttons>
+      <ion-title>KCILE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="kcileimg">
+
+  <h1 class="ion-text-center" style="font-size:15px;color:floralwhite;margin-top:20px;display:none;">
+    Register<span> Course</span></h1>
+
+  <div class="form">
+      <ion-list lines="none">
+          <ion-item lines="none">
+              <div class="item_inner d-flex">
+                  <ion-icon class="zmdi zmdi-account ion-text-start"></ion-icon>
+                  <ion-input mode="md" type="name" placeholder="Full Name" [(ngModel)]="name">
+                  </ion-input>
+              </div>
+          </ion-item>
+          <ion-item lines="none">
+              <div class="item_inner d-flex">
+                  <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                  <ion-input mode="md" type="text" placeholder="Phone Number" 
+                  [(ngModel)]="pnum">
+                  </ion-input>
+              </div>
+          </ion-item>
+          <ion-item lines="none">
+              <div class="item_inner d-flex">
+                  <ion-icon class="zmdi zmdi-email ion-text-start"></ion-icon>
+                  <ion-input mode="md" type="email" placeholder="Email" 
+                  [(ngModel)]="email"></ion-input>
+              </div>
+          </ion-item>
+          <ion-item lines="none">
+            <div class="item_inner d-flex">
+                <ion-icon class="zmdi zmdi-home ion-text-start"></ion-icon>
+                <ion-input mode="md" type="text" placeholder="Address" 
+                [(ngModel)]="address"></ion-input>
+            </div>
+         </ion-item>
+       <ion-item lines="none">
+        <div class="item_inner d-flex">
+            <ion-icon class="zmdi zmdi-home ion-text-start"></ion-icon>
+            <ion-input mode="md" type="text" placeholder="Country" 
+            [(ngModel)]="country"></ion-input>
+        </div>
+        </ion-item>
+        <ion-item lines="none">
+          <div class="item_inner d-flex">
+              <ion-icon class="zmdi zmdi-home ion-text-start"></ion-icon>
+              <ion-input mode="md" type="text" placeholder="State" 
+              [(ngModel)]="state"></ion-input>
+          </div>
+        </ion-item>
+        <ion-item lines="none">
+          <div class="item_inner d-flex">
+              <ion-icon class="zmdi zmdi-home ion-text-start"></ion-icon>
+              <ion-input mode="md" type="text" placeholder="City" 
+              [(ngModel)]="city"></ion-input>
+          </div>
+        </ion-item>
+        <ion-item lines="none">
+          <div class="item_inner d-flex">
+              <ion-icon class="zmdi zmdi-home ion-text-start"></ion-icon>
+              <ion-input mode="md" type="text" placeholder="Zipcode" 
+              [(ngModel)]="zipcode"></ion-input>
+          </div>
+        </ion-item>
+        <ion-radio-group [(ngModel)]="gender">
+          <ion-list-header>
+            <ion-label><p id="label">Gender</p></ion-label>
+          </ion-list-header>
+      
+          <ion-item>
+            <ion-label><p id="label">Male</p></ion-label>
+            <ion-radio slot="start" value="Male"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label><p id="label">Female</p></ion-label>
+            <ion-radio slot="start" value="Female"></ion-radio>
+          </ion-item>
+
+        </ion-radio-group>
+
+          
+              <div class="">
+                    <ion-list-header>
+                      <ion-label><p id="label2">Select Course(s)</p></ion-label>
+                    </ion-list-header>
+                
+                    <ion-item *ngFor="let module of modules">
+                      <ion-label><p id="label">{{module.name}}</p></ion-label>
+                      <ion-checkbox slot="start" [(ngModel)]="module.checked" (ionChange)="isChecked(item,$event)"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item lines="none" style="display: none;">
+                      <div class="item_inner d-flex">
+                          <ion-icon class="zmdi ion-text-start"></ion-icon>
+                          <ion-input mode="md" type="text" placeholder="Value" 
+                          value="{{val}}" [(ngModel)]="val"></ion-input>
+                        
+                      </div>
+                   </ion-item>
+                
+              </div>
+
+
+              <div class="" style="display:none;">
+                <ion-radio-group>
+                  <ion-list-header>
+                    <ion-label><p id="label">Fees Included</p></ion-label>
+                  </ion-list-header>
+              
+                  <ion-item>
+                    <ion-label><p id="label">Yes</p></ion-label>
+                    <ion-radio slot="start" value="Yes"></ion-radio>
+                  </ion-item>
+              
+                  <ion-item>
+                    <ion-label><p id="label">No</p></ion-label>
+                    <ion-radio slot="start" value="No"></ion-radio>
+                  </ion-item>
+              
+                  <ion-item>
+                    <ion-label><p id="label">Partial Amount</p></ion-label>
+                    <ion-radio slot="start" value="Partial Amount"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+               </div>
+         
+      </ion-list>
+      <ion-button size="large" expand="full" class="btn" (click)="kcilereg()" [disabled]="disabledButton" 
+      color="tertiary">SUBMIT</ion-button>
+    </div>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Live TV</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="bg_img">
+  <ion-slides pager="false" [options]="slideOpts">
+      <ion-slide *ngFor="let data of blogdata">
+        <p><strong>News Bits:&nbsp;&nbsp; {{data.blogtitle}}</strong></p>
+      </ion-slide>
+  </ion-slides>
+  <div class="logo ion-text-center">
+      <img src="assets/imgs/logo.png">
+      <!--<h1 class="ion-text-center" style="font-size:18px;">Ade<span>Ajala Ministries</span></h1>-->
+  </div>
+  <div class="menu-item-container">
+      <ion-row>
+        <ion-col size="12" (click)="liveservice()">
+          <div class="menu-item" *ngIf="servicedata == 'true'">
+              <img src="assets/imgs/ic_tv.png" class="img">
+              <p class="p">Watch Our Live Service</p>
+          </div>
+      </ion-col>
+      <ion-col size="12" (click)="livetv()">
+          <div class="menu-item" *ngIf="tvdata == 'true'"> 
+            <img src="assets/imgs/ic_tv.png" class="img">
+            <p class="p">Watch Now</p>
+          </div>
+      </ion-col>
+
+           
+      </ion-row>
+  </div>
+</ion-content>

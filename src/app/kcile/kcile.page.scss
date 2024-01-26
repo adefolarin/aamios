@@ -1,0 +1,157 @@
+.logo {
+    height: 158px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    margin-top: -25px;
+
+    img {
+        width: 70px;
+        display: block;
+        margin: auto;
+    }
+
+    h1 {
+        margin: auto;
+        width: 100%;
+        color: var(--white);
+        font-weight: 400;
+        font-size: 2.2rem;
+
+        span {
+            font-weight: 600;
+        }
+    }
+}
+
+h2 {
+    font-size: 0.7rem;
+    line-height: 18px;
+    margin-top: -20px;
+    margin-bottom: 0px;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    color: floralwhite;
+}
+
+
+.text-box {
+    width: calc(100% - 5px);
+    margin: 0 auto;
+    padding-top: 20px;
+
+    h2 {
+        margin: 0;
+        color: floralwhite;
+        font-weight: 700;
+        font-size: 0.9rem;
+        padding-bottom: 17px;
+    }
+
+    p {
+        margin: 0;
+        font-size: .95rem;
+        padding-bottom: 17px;
+        line-height: 23px;
+        color: var(--white);
+    }
+
+    h4 {
+        margin: 0;
+        font-weight: 500;
+        font-size: 0.9rem;
+        padding-bottom: 17px;
+        color: var(--white);
+    }
+}
+
+
+ion-row {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    padding-bottom: 10px;
+
+    ion-col {
+        span {
+            margin: 0;
+            font-size: 0.8rem;
+            padding-bottom: 10px;
+            font-weight:500;
+            position: relative;
+            top:-3px;
+            color: var(--white);
+        }
+
+        h4 {
+            color: var(--white);
+            margin: 0;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-align: left;
+        }
+    }
+
+    ion-icon {
+      font-size: 20px;
+      color: var(--white);
+    }
+
+}
+
+
+ion-card {
+
+    --background: rgba(43, 51, 135,.4);
+
+    #h4card {
+        padding-bottom: 0;
+        border: none;       
+        
+    }
+
+    #course {
+        text-align: left;
+
+        ion-icon {
+            font-size: 10px;
+            position: relative;
+            top: 1px;
+        }
+
+        span {
+         font-size: 15px;
+        }
+    }
+ 
+    padding-top: 0;
+    padding-bottom: 0;
+
+
+      ion-item {
+          text-align: left;
+          font-size: 14px;
+          color: white;
+          font-weight: 500;
+          --border:none;
+          --background:  rgba(43, 51, 135,.4);
+
+        
+      }
+    
+    
+}
+
+ion-button {
+  --background: rgba(43, 51, 135,.4);
+  color:#fff;
+  font-size:14px;
+}
+
+#btncourse {
+    --background: rgb(8, 112, 238);
+    color:#fff;
+    font-size:14px;
+}
+

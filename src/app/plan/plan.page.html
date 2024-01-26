@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'choose_a_plan' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="bg_img">
+    <ion-list lines="none">
+        <ion-item>
+            <div class="item_inner d-flex">
+                <div class="plan">
+                    <h2>$5.00</h2>
+                    <h3>{{'for' | translate}} 1 {{'month' | translate}}</h3>
+                </div>
+                 <ion-button size="large" expand="block" class="btn end" (click)="payment()">{{'buy_now' | translate}}</ion-button>
+            </div>
+        </ion-item>   
+        
+        <ion-item>
+            <div class="item_inner d-flex">
+                <div class="plan">
+                    <h2>$25.00</h2>
+                    <h3>{{'for' | translate}} 6 {{'month' | translate}}</h3>
+                </div>
+                 <ion-button size="large" expand="block" class="btn end" (click)="payment()">{{'buy_now' | translate}}</ion-button>
+            </div>
+        </ion-item>  
+        
+        <ion-item>
+            <div class="item_inner d-flex">
+                <div class="plan">
+                    <h2>$40.00</h2>
+                    <h3>{{'for' | translate}} 12 {{'month' | translate}}</h3>
+                </div>
+                 <ion-button size="large" expand="block" class="btn end" (click)="payment()">{{'buy_now' | translate}}</ion-button>
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>

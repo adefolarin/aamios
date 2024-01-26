@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+          <div class="title_inner d-flex">
+            Event Details
+          </div>
+        </ion-title>
+    </ion-toolbar>
+    
+</ion-header>
+
+
+<ion-content class="bg_img" fullscreen>
+    <div class="text-box">
+        <ion-row>
+            <ion-col size="7">
+                <p>{{'date' | translate}}</p>
+                <h2>{{calendardate}} </h2>
+            </ion-col>
+            <ion-col size="5">
+                <p>{{'time' | translate}}</p>
+                <h2>{{calendartime}}</h2>
+            </ion-col>
+        </ion-row>
+        <ion-card>
+         <h2>{{calendarname}}</h2>
+         <p [innerHTML]="calendarcontent"></p>
+        </ion-card>
+    </div>
+</ion-content>

@@ -1,0 +1,184 @@
+<ion-header>
+    <ion-toolbar> 
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title_inner d-flex"> {{'my_profile' | translate}} </div>
+        </ion-title>
+    </ion-toolbar>
+    <ion-segment [(ngModel)]="events_tab">
+        <ion-segment-button value="profile">
+          <ion-label>Profile</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="myemail">
+          <ion-label>Email</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="pnum">
+          <ion-label>Phone No</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="pass">
+          <ion-label>Password</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content fullscreen class="bg_img">
+    <div [ngSwitch]="events_tab">
+    <div class="form" *ngSwitchCase="'profile'">
+        <p style="text-align: center;color: floralwhite;">My Profile</p>
+        
+        <ion-list lines="none">
+            <ion-item lines="none" style="display:none;">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi ion-text-start"></ion-icon>
+                    <div class="input_field">
+                        <ion-label position="stacked">User ID</ion-label>
+                        <ion-input mode="md" type="text" value="{{userid}}" [(ngModel)]="userid"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi ion-text-start"></ion-icon>
+                    <div class="input_field">
+                        <ion-label position="stacked">{{'name' | translate}}</ion-label>
+                        <ion-input mode="md" type="name" value="{{name}}" [(ngModel)]="name"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi ion-text-start"></ion-icon> 
+                    <div class="input_field">
+                          <ion-label position="stacked">Country</ion-label>
+                        <ion-input mode="md" type="text"  value="{{country}}" [(ngModel)]="country"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi ion-text-start"></ion-icon>
+                      <div class="input_field">
+                        <ion-label position="stacked">Address</ion-label>
+                        <ion-input mode="md" type="text" value="{{address}}" [(ngModel)]="address"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi ion-text-start"></ion-icon>
+                      <div class="input_field">
+                        <ion-label position="stacked">State</ion-label>
+                        <ion-input mode="md" type="text" value="{{state}}" [(ngModel)]="state"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi ion-text-start"></ion-icon>
+                      <div class="input_field">
+                        <ion-label position="stacked">City</ion-label>
+                        <ion-input mode="md" type="text" value="{{city}}" [(ngModel)]="city"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+        <ion-button size="small" expand="full" class="btn" (click)="changeProfile()">
+            Update</ion-button>
+      </div>
+
+
+
+      <div class="form" *ngSwitchCase="'myemail'">
+        <p style="text-align: center;color: floralwhite;">My Email</p>
+        <ion-list lines="none">
+            <ion-item lines="none" style="display:none;">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi ion-text-start"></ion-icon>
+                    <div class="input_field">
+                        <ion-label position="stacked">User ID</ion-label>
+                        <ion-input mode="md" type="text" value="{{userid}}" [(ngModel)]="userid"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi ion-text-start"></ion-icon>
+                    <div class="input_field">
+                        <ion-label position="stacked">Email</ion-label>
+                        <ion-input mode="md" type="text" value="{{email}}" [(ngModel)]="email"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+  
+        </ion-list>
+        <ion-button size="small" expand="full" class="btn" (click)="changeEmail()">Change</ion-button>
+      </div>
+
+
+
+
+      <div class="form" *ngSwitchCase="'pnum'">
+        <p style="text-align: center;color: floralwhite;">My Phone Number</p>
+        <ion-list lines="none">
+            <ion-item lines="none" style="display:none;">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi ion-text-start"></ion-icon>
+                    <div class="input_field">
+                        <ion-label position="stacked">User ID</ion-label>
+                        <ion-input mode="md" type="text" value="{{userid}}" [(ngModel)]="userid"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi ion-text-start"></ion-icon>
+                    <div class="input_field">
+                        <ion-label position="stacked">Phone Number</ion-label>
+                        <ion-input mode="md" type="text" value="{{pnum}}" [(ngModel)]="pnum"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+  
+        </ion-list>
+        <ion-button size="small" expand="full" class="btn" (click)="changePnum()">Change</ion-button>
+      </div>
+
+
+
+
+
+      <div class="form" *ngSwitchCase="'pass'">
+        <p style="text-align: center;color: floralwhite;">Change Password</p>
+        <ion-list lines="none">
+            <ion-item lines="none" style="display:none;">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi ion-text-start"></ion-icon>
+                    <div class="input_field">
+                        <ion-label position="stacked">User ID</ion-label>
+                        <ion-input mode="md" type="text" value="{{userid}}" [(ngModel)]="userid"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi ion-text-start"></ion-icon>
+                    <div class="input_field">
+                        <ion-label position="stacked">New Password</ion-label>
+                        <ion-input mode="md" type="password" value="{{pass}}" [(ngModel)]="pass"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+  
+        </ion-list>
+        <ion-button size="small" expand="full" class="btn" (click)="changePass()">Change</ion-button>
+      </div>
+
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    
+</ion-footer>

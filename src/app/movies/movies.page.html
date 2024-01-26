@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+        <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        OnDemand Messages
+      </ion-title>
+    </ion-toolbar>
+</ion-header>
+   
+  <ion-content> 
+    <ion-list class="ion-padding">
+      <ion-item ion-item *ngFor="let videos of (listvideos | async)?.items" 
+      (click)="openSingle(videos.id.videoId)">
+        <ion-thumbnail slot="start">
+        <img [src]="videos.snippet.thumbnails.high.url">
+
+      </ion-thumbnail>
+      <div id="list">
+      <h4>{{ videos.snippet.title }}</h4>
+      <p>{{ videos.snippet.publishedAt | date:'short' }}</p>
+      </div>
+      </ion-item>
+    </ion-list>
+
+    <!--videos.snippet.resourceId.videoId-->
+    
+  </ion-content>

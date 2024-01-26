@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="bg_img">
+    <div class="logo ion-text-center">
+        <img src="assets/imgs/logo.png">
+        <!--<h1 class="ion-text-center" style="font-size:18px;">Ade<span>Ajala Ministries</span></h1>-->
+    </div>
+    <h2 class="ion-text-center ion-text-uppercase"><strong>{{'Register' | translate}}</strong> {{'Now' | translate}}</h2>
+
+    <div class="form">
+        <ion-list lines="none">
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-account ion-text-start"></ion-icon>
+                    <ion-input mode="md" type="name" placeholder="{{'Name' | translate}}" [(ngModel)]="name">
+                    </ion-input>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-email ion-text-start"></ion-icon>
+                    <ion-input mode="md" type="email" placeholder="{{'Email' | translate}}" 
+                    [(ngModel)]="email"></ion-input>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-lock ion-text-start"></ion-icon>
+                    <ion-input mode="md" type="password" placeholder="{{'Create Password' | translate}}" 
+                    [(ngModel)]="pass">
+                    </ion-input>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-lock ion-text-start"></ion-icon>
+                    <ion-input mode="md" type="password" placeholder="{{'Confirm Password' | translate}}" 
+                    [(ngModel)]="cpass">
+                    </ion-input>
+                </div>
+            </ion-item>
+        </ion-list>
+        <ion-button size="large" expand="full" class="btn" (click)="signup()" [disabled]="disabledButton" color="tertiary">
+            {{'SIGN UP' | translate}}</ion-button>
+        <p class="ion-text-center" (click)="signin()">{{'SIGN IN' | translate}}</p>
+    </div>
+</ion-content>

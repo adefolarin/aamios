@@ -1,0 +1,89 @@
+<ion-app [dir]="rtlSide">
+    <ion-split-pane contentId="main-content">
+        <ion-menu contentId="main-content" type="overlay">
+            <ion-header> 
+                <ion-menu-toggle auto-hide="false">
+                    <div class="profile_box d-flex">
+                        <div class="img_box center_img">
+                            <img src="assets/imgs/logo.png" class="crop_img">
+                        </div>
+                    </div>
+                </ion-menu-toggle>
+            </ion-header>
+            <ion-content>
+                <ion-list lines="none">
+                    <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+                        <ion-item mode="ios" detail="false" [routerDirection]="'root'" [routerLink]="[p.url]">
+                            <div class="item_inner d-flex">
+                                <div class="img_box ion-text-start">
+                                    <img data-src="{{p.image}}">
+                                </div>
+                                <h2 style="font-size:12px;">{{ p.title | translate}}</h2>
+                            </div>
+                        </ion-item>
+                    </ion-menu-toggle>
+
+                    <ion-menu-toggle auto-hide="false">
+                        <ion-item mode="ios" detail="false" (click)="give()" style="display: block;">
+                            <div class="item_inner d-flex">
+                                <div class="img_box ion-text-start">
+                                    <img src="assets/imgs/ic_give.png">
+                                </div>
+                                <h2 style="font-size:12px;">Give / Donate</h2>
+                            </div>
+                        </ion-item>
+                    </ion-menu-toggle>
+
+                    <ion-menu-toggle auto-hide="false">
+                        <ion-item mode="ios" detail="false" (click)="programs()" style="display: block;">
+                            <div class="item_inner d-flex">
+                                <div class="img_box ion-text-start">
+                                    <img src="assets/imgs/ic_volunteer.png">
+                                </div>
+                                <h2 style="font-size:12px;">Volunteer / Support</h2>
+                            </div>
+                        </ion-item>
+                    </ion-menu-toggle>
+                    
+                    <ion-menu-toggle auto-hide="false">
+                    <ion-item mode="ios" detail="false" (click)="profile()" style="display: block;">
+                        <div class="item_inner d-flex">
+                            <div class="img_box ion-text-start">
+                                <img src="assets/imgs/ic_setting.png">
+                            </div>
+                            <h2 style="font-size:12px;">Profile</h2>
+                        </div>
+                    </ion-item>
+                    </ion-menu-toggle>
+
+                    <ion-menu-toggle auto-hide="false">
+                        <ion-item mode="ios" detail="false" (click)="feedback()" style="display: block;">
+                            <div class="item_inner d-flex">
+                                <div class="img_box ion-text-start">
+                                    <img src="assets/imgs/ic_feedback.png">
+                                </div>
+                                <h2 style="font-size:12px;">Contact Us</h2>
+                            </div>
+                        </ion-item>
+                        </ion-menu-toggle>
+
+                    <ion-menu-toggle auto-hide="false">
+                        <ion-item mode="ios" detail="false" (click)="logout()" style="display: block;">
+                            <div class="item_inner d-flex">
+                                <div class="img_box ion-text-start">
+                                    <img src="assets/imgs/ic_logout.png">
+                                    <!--<ion-icon name="mail" slot="start" id="menu-icon"></ion-icon>-->
+                                </div>
+                                <h2 style="font-size:12px;">Logout</h2>
+                            </div>
+                        </ion-item>
+                        </ion-menu-toggle>
+                </ion-list>
+            </ion-content>
+            <ion-footer class="ion-no-border">
+               
+            </ion-footer>
+        </ion-menu>
+        <ion-router-outlet id="main-content"></ion-router-outlet>
+    </ion-split-pane>
+</ion-app>

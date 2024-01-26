@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-toolbar color="tertiary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Prayer Request</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="bg_img">
+
+    <h1 class="ion-text-center" style="font-size:15px;color:floralwhite;margin-top:60px;">Send Your<span> Prayer Request</span></h1>
+
+    <div class="form">
+        <ion-list lines="none">
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-account ion-text-start"></ion-icon>
+                    <ion-input mode="md" type="name" placeholder="Full Name" [(ngModel)]="name">
+                    </ion-input>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                    <ion-input mode="md" type="text" placeholder="Phone Number" 
+                    [(ngModel)]="pnum">
+                    </ion-input>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-email ion-text-start"></ion-icon>
+                    <ion-input mode="md" type="email" placeholder="Email" 
+                    [(ngModel)]="email"></ion-input>
+                </div>
+            </ion-item>
+
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-inbox ion-text-start"></ion-icon>
+                    <ion-textarea mode="md" type="text" placeholder="Your Request" [(ngModel)]="message"></ion-textarea>
+                </div>
+            </ion-item>
+        </ion-list>
+        <ion-button size="large" expand="full" class="btn" (click)="prayerRequest()" [disabled]="disabledButton" 
+        color="tertiary">Send</ion-button>
+    </div>
+</ion-content>

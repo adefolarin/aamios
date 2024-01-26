@@ -1,0 +1,119 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title id="title">Welcome {{name | titlecase}}</ion-title>
+        <ion-buttons slot="end"> 
+          <ion-button (click)="logout()">
+            <ion-icon slot="icon-only" name="exit" color="light"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="bg_img">
+    <ion-slides pager="false" [options]="slideOpts" #slider>
+        <ion-slide *ngFor="let data of blogdata">
+          <p><strong>{{data.blogtitle}}</strong></p>
+        </ion-slide>
+    </ion-slides>
+    <div class="logo ion-text-center">
+        <img src="assets/imgs/logo.png">
+        <!--<h1 class="ion-text-center" style="font-size:18px;">Ade<span>Ajala Ministries</span></h1>-->
+    </div>
+    <div class="menu-item-container">
+        <ion-row>
+            <ion-col size="4" (click)="livetv()">
+                <div class="menu-item">
+                    <img src="assets/imgs/ic_tv.png">
+                    <p>{{'Live TV' | translate}} <br><span>Dummy Text</span></p>
+                </div>
+            </ion-col>
+
+            <ion-col size="4" (click)="movies()">
+                <div class="menu-item">
+                    <img src="assets/imgs/ic_gallery.png">
+                    <p>Messages <br>(On Demand)</p>
+                </div>
+            </ion-col>
+            <ion-col size="4" (click)="liveservice()">
+                <div class="menu-item">
+                    <img src="assets/imgs/ic_tv.png">
+                    <p>{{'Live Service' | translate}} <br><span>Dummy Text</span></p>
+                </div>
+            </ion-col>
+            <ion-col size="4" (click)="podcast()">
+                <div class="menu-item">
+                    <img src="assets/imgs/ic_podcast.png">
+                    <p>{{'Podcasts' | translate}} <br><span>Dummy Text</span></p>
+                </div>
+            </ion-col>
+
+            <ion-col size="4" (click)="events()">
+                <div class="menu-item">
+                    <img src="assets/imgs/ic_events.png">
+                    <p>{{'Events' | translate}} <br><span>Dummy Text</span></p>
+                </div>
+            </ion-col>
+            
+            <ion-col size="4">
+                <div class="menu-item" (click)="kcile()">
+                    <img src="assets/imgs/kcilelogo.png">
+                    <p>KCILE <br><span>Dummy Text</span></p>
+                </div>
+            </ion-col>
+
+
+            <ion-col size="4">
+                <div class="menu-item" (click)="bible()">
+                    <img src="assets/imgs/ic_bible.png">
+                    <p>{{'Bible' | translate}} <br><span>Dummy Text</span></p>
+                </div>
+            </ion-col>
+            
+            <ion-col size="4" (click)="prayers()">
+                <div class="menu-item">
+                    <img src="assets/imgs/ic_prayer.png">
+                    <p>{{'Prayer Requests' | translate}} <br><span>Dummy Text</span></p>
+                </div>
+            </ion-col>
+
+            <ion-col size="4" (click)="give()">
+                <div class="menu-item">
+                    <img src="assets/imgs/ic_give.png">
+                    <p>Give / Donate <br><span>Dummy Text</span></p>
+                </div>
+            </ion-col>
+
+            <ion-col size="4" (click)="programs()">
+                <div class="menu-item">
+                    <img src="assets/imgs/ic_volunteer.png">
+                    <p>K.C.C.C. FORMS <br><span>Dummy Text</span></p>
+                </div>
+            </ion-col>
+            
+            <ion-col size="4" (click)="website()">
+                <div class="menu-item">
+                    <img src="assets/imgs/ic_web.png">
+                    <p>KCCC Website <br><span>Dummy Text</span></p>
+                </div>
+            </ion-col>
+            <ion-col size="4" (click)="shareapp()">
+                <div class="menu-item">
+                    <img src="assets/imgs/ic_share.png">
+                    <p>Share App<br><span>Dummy Text</span></p>
+                </div>
+            </ion-col>
+            
+            <ion-col size="4" (click)="feedback()" style="display: none;">
+                <div class="menu-item">
+                    <img src="assets/imgs/ic_feedback.png">
+                    <p>{{'Contact Us' | translate}} <br><span>Dummy Text</span></p>
+                </div>
+            </ion-col>
+  
+             
+        </ion-row>
+    </div>
+</ion-content>

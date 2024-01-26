@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Podcasts</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content fullscreen class="bg_img"> 
+    <ion-card *ngFor="let data of podcastdata" class="ion-padding">
+      <div id="list">
+        <h4>{{ data.audio_title }}</h4>
+        <p>{{ data.published_at }}</p>
+      </div>
+      <div>
+        <audio [src]="data.audio_url" controls></audio>
+      </div>  
+    </ion-card>
+</ion-content>

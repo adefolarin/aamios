@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+          <div class="title_inner d-flex">
+              Give / Donate
+          </div>
+      </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="bg_img" fullscreen>
+  <h1 class="ion-text-center" style="font-size:13px;color:floralwhite;margin-top:20px;line-height:30px;">
+    Please Select From The Options Below</h1>
+  <div>
+      <ion-list lines="none">
+          <ion-item routerLink="/payment/1" routerDirection="forward" class="ion-text-center">
+              <h3 id="catname">TITHE</h3>                    
+          </ion-item>
+          <ion-item routerLink="/payment/2" routerDirection="forward" style="text-align: center;">
+            <h3 id="catname">OFFERING</h3>                    
+          </ion-item>
+          <ion-item routerLink="/payment/3" routerDirection="forward" style="text-align: center;">
+            <h3 id="catname">OTHER</h3>                    
+          </ion-item>
+          
+      </ion-list>
+  </div>
+</ion-content>

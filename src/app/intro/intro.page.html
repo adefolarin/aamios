@@ -1,0 +1,17 @@
+
+
+<ion-content id="myioncontent">
+  <div class="logo ion-text-center" style="display:block;">
+    <img src="assets/imgs/logo.png">
+    <p style="color: floralwhite;font-size:14px;">Bishop Israel Ade-Ajala Introducing AAM</p>
+  </div>
+  <ion-slides pager="false" [options]="slideOpts">
+    <ion-slide>
+      <div id="slide_div">
+        <video [src]="videourl" width="100%" height="315" controls allow="autoplay;"></video>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <ion-button expand="block" share="round" color="light" (click)="navigateToLogin()" color="tertiary">{{btntext}}</ion-button>
+ 
+</ion-content>

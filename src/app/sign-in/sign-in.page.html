@@ -1,0 +1,62 @@
+<!--
+<ion-header>
+    <ion-toolbar>
+        <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+-->
+
+<ion-content fullscreen class="bg_img">
+    <div class="logo ion-text-center">
+        <img src="assets/imgs/logo.png">
+        <!--<h1 class="ion-text-center" style="font-size:18px;">Ade<span>Ajala Ministries</span></h1>-->
+    </div>
+    <h2 class="ion-text-center ion-text-uppercase"><strong>{{'SIGN IN' | translate}}</strong> {{'Now' | translate}}</h2>
+
+    <div class="form">
+        <ion-list lines="none">
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-email ion-text-start"></ion-icon>
+                    <ion-input mode="md" type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+                </div>
+            </ion-item>
+
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-lock ion-text-start"></ion-icon>
+                    <ion-input mode="md" type="password" placeholder="Password" [(ngModel)]="pass"></ion-input>
+                </div>
+            </ion-item>
+        </ion-list>
+        <ion-button size="small" expand="full" class="btn signin" (click)="signin()" color="tertiary">SIGN IN</ion-button>
+
+        <div class="forgot-register">
+            <p class="d-flex">
+                <span (click)="password()">{{'Forgot Password?' | translate}}</span>
+                <span (click)="signup()" class="end"> {{'Register' | translate}}</span>
+            </p>
+        </div>
+
+        <ion-button size="medium" expand="full" class="btn guestsignin" (click)="signinGuest()" color="danger">Sign in as a Guest</ion-button>
+
+
+        <div class="socsocial_media" style="display: none;">
+            <p class="ion-text-center">{{'or_continue_with' | translate}}</p>
+            <div class="icon_box">
+                <div class="icon" (click)="home()">
+                    <img src="assets/imgs/ic_facebook.png">
+                </div>
+<!--
+                <div class="icon" (click)="home()">
+                    <img src="assets/imgs/ic_twitter.png">
+                </div>
+-->
+                <div class="icon" (click)="home()">
+                    <img src="assets/imgs/ic_g.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-content>

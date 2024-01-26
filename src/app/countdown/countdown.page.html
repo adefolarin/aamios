@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button (click)="goback()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+        CountDown Timer
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="bg_img">
+
+  <br><br>
+  <h4 style='text-align: center;font-size:18px;font-weight:bold;'>Live Service Begins In</h4>
+ 
+  <div class="menu-item-container">
+    <ion-row>
+        <ion-col size="3">
+            <div class="menu-item">
+               <p id="demo1"></p>
+            </div>
+        </ion-col>
+        <ion-col size="3">
+          <div class="menu-item">
+              <p id="demo2"></p>
+          </div>
+       </ion-col>
+       <ion-col size="3">
+        <div class="menu-item">
+            <p id="demo3"></p>
+        </div>
+       </ion-col>
+       <ion-col size="3">
+        <div class="menu-item">
+            <p id="demo4"></p>
+        </div>
+       </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col size="12">
+          <div class="menu-item">
+              <img src="assets/imgs/ic_tv.png" id="lvimg">
+              <p style="font-size: 18px;"></p>
+          </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+ 
+</ion-content>

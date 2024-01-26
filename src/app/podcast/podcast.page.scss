@@ -1,0 +1,23 @@
+#list h4 {
+    font-size: 13px;
+    color:#ddd7d7;
+}
+  #list p {
+    font-size: 11px;
+    color:whitesmoke;
+}
+
+ion-content {
+    --background: url("../../assets/imgs/mybg.png") no-repeat center/cover fixed;
+  
+}
+
+ion-card {
+    background: var(--item_bg4);
+}
+
+audio {
+    filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+    height: 30px;
+    border-radius: 0px;
+}
